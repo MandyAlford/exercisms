@@ -6,23 +6,19 @@
 export const translate = (test = '') => {
   let translation = [];
   let codons = test.split('');
-  if(test === ''){
-    return [];
-  } else {
-      while (codons.length > 0){
-        let codon = codons.splice(0, 3);
-        let joined = codon.join('');
-        let result = proteins[joined];
 
-        if(result == undefined) {
-          throw new Error("Invalid codon")
-        } else if (result === 'STOP'){
-          return translation;
-        } else if (result !=  'STOP'){
-          translation.push(result)
-        }
-      }
+  while (codons.length > 0){
+    let codon = codons.splice(0, 3).join('');
+    let protein = proteins[codon];
+
+    if(protein == undefined) {
+      throw new Error("Invalid codon")
+    } else if (protein === 'STOP'){
+      return translation;
+    } else if (protein !=  'STOP'){
+      translation.push(protein)
     }
+  }
   return translation;
 };
 
@@ -36,7 +32,7 @@ export const translate = (test = '') => {
   // throw new Error("Invalid codon");
 
 
-let proteins = {
+const proteins = {
   AUG: 'Methionine',
   UUU: 'Phenylalanine',
   UUC: 'Phenylalanine',
