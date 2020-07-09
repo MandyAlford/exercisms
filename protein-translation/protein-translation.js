@@ -9,21 +9,20 @@ export const translate = (test = '') => {
   if(test === ''){
     return [];
   } else {
-    while (codons.length > 0){
-      let codon = codons.splice(0, 3);
-      let joined = codon.join('');
-      //
-      // console.log(proteins[joined])
-      let result = proteins[joined];
+      while (codons.length > 0){
+        let codon = codons.splice(0, 3);
+        let joined = codon.join('');
+        let result = proteins[joined];
 
-      if(result !=  'STOP'){
-        translation.push(result)
-      } else {
-        return translation;
+        if(result == undefined) {
+          throw new Error("Invalid codon")
+        } else if (result === 'STOP'){
+          return translation;
+        } else if (result !=  'STOP'){
+          translation.push(result)
+        }
       }
     }
-    }
-      console.log('translation', translation)
   return translation;
 };
 
@@ -34,7 +33,7 @@ export const translate = (test = '') => {
   // put value into array
   // repeat until hitting a stop string
   // when you hit a stop, return the array of proteins
-  // throw new Error("Remove this statement and implement this function");
+  // throw new Error("Invalid codon");
 
 
 let proteins = {
