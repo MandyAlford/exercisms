@@ -49,15 +49,15 @@ describe('ProteinTranslation', () => {
     expect(translate('AUGUUUUCU')).toEqual(['Methionine', 'Phenylalanine', 'Serine']);
   });
 
-  xtest('Stop codon ends translation', () => {
+  test('Stop codon ends translation', () => {
     expect(translate('AUGUUUUCUUAAAUG')).toEqual(['Methionine', 'Phenylalanine', 'Serine']);
   });
 
-  xtest('Invalid codon throws error', () => {
+  test('Invalid codon throws error', () => {
     expect(() => translate('LOL')).toThrow(new Error('Invalid codon'));
   });
 
-  xtest('Invalid codon throws error', () => {
+  test('Invalid codon throws error', () => {
     expect(() => translate('AUGOO')).toThrow(new Error('Invalid codon'));
   });
 });
