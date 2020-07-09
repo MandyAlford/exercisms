@@ -9,15 +9,25 @@ export const translate = (test = '') => {
   if(test === ''){
     return [];
   } else {
-    // for(var i = 0; i <= 3; i++){}
-      let codon = codons[0]+ codons[1]+ codons[2]
-      console.log(codon)
-      let result = proteins[codon];
-      translation.push(result)
+    while (codons.length > 0){
+      let codon = codons.splice(0, 3);
+      let joined = codon.join('');
+      //
+      // console.log(proteins[joined])
+      let result = proteins[joined];
 
-    // console.log(codons)
-    return translation;
-  }
+      if(result !=  'STOP'){
+        translation.push(result)
+      } else {
+        return translation;
+      }
+    }
+    }
+      console.log('translation', translation)
+  return translation;
+};
+
+
 
   // break string into strings of 3
   // check proteins obj for each string for a match
@@ -25,7 +35,7 @@ export const translate = (test = '') => {
   // repeat until hitting a stop string
   // when you hit a stop, return the array of proteins
   // throw new Error("Remove this statement and implement this function");
-};
+
 
 let proteins = {
   AUG: 'Methionine',
