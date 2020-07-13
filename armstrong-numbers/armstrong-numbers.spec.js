@@ -13,7 +13,7 @@ describe('Armstrong Numbers', () => {
     expect(isArmstrongNumber(10)).toEqual(false);
   });
 
-  xtest('Three digit number that is an Armstrong number', () => {
+  test('Three digit number that is an Armstrong number', () => {
     expect(isArmstrongNumber(153)).toEqual(true);
   });
 
