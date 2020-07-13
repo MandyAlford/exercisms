@@ -9,7 +9,7 @@ describe('Armstrong Numbers', () => {
     expect(isArmstrongNumber(5)).toEqual(true);
   });
 
-  xtest('There are no 2 digit Armstrong numbers', () => {
+  test('There are no 2 digit Armstrong numbers', () => {
     expect(isArmstrongNumber(10)).toEqual(false);
   });
 

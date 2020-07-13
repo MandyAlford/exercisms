@@ -23,5 +23,7 @@ export const isArmstrongNumber = (num) => {
   }, 0);
   if (answer === num) {
     return true
+  } else {
+    return false
   }
 };
