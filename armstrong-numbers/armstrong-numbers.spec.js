@@ -33,7 +33,7 @@ describe('Armstrong Numbers', () => {
     expect(isArmstrongNumber(9926315)).toEqual(true);
   });
 
-  xtest('Seven digit number that is not an Armstrong number', () => {
+  test('Seven digit number that is not an Armstrong number', () => {
     expect(isArmstrongNumber(9926314)).toEqual(false);
   });
 });
