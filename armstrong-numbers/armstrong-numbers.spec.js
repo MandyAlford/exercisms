@@ -21,7 +21,7 @@ describe('Armstrong Numbers', () => {
     expect(isArmstrongNumber(100)).toEqual(false);
   });
 
-  xtest('Four digit number that is an Armstrong number', () => {
+  test('Four digit number that is an Armstrong number', () => {
     expect(isArmstrongNumber(9474)).toEqual(true);
   });
 
