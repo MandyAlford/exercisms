@@ -5,7 +5,7 @@ describe('Armstrong Numbers', () => {
     expect(isArmstrongNumber(0)).toEqual(true);
   });
 
-  xtest('Single digit numbers are Armstrong numbers', () => {
+  test('Single digit numbers are Armstrong numbers', () => {
     expect(isArmstrongNumber(5)).toEqual(true);
   });
 
