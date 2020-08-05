@@ -23,20 +23,20 @@ describe('gigasecond', () => {
   });
 
   // full time specified
-  xtest('tells the anniversary, including a time', () => {
+  test('tells the anniversary, including a time', () => {
     const gs = gigasecond(new Date(Date.UTC(2015, 0, 24, 22, 0, 0)));
     const expectedDate = new Date(Date.parse('2046-10-02T23:46:40Z'));
     expect(gs).toEqual(expectedDate);
   });
 
   // full time with day roll-over
-  xtest('tells the anniversary is next day when you are born at night', () => {
+  test('tells the anniversary is next day when you are born at night', () => {
     const gs = gigasecond(new Date(Date.UTC(2015, 0, 24, 23, 59, 59)));
     const expectedDate = new Date(Date.parse('2046-10-03T01:46:39Z'));
     expect(gs).toEqual(expectedDate);
   });
 
-  xtest('does not mutate the input', () => {
+  test('does not mutate the input', () => {
     const input = new Date(Date.UTC(2020, 0, 4, 20, 28, 30));
     gigasecond(input);
     expect(input).toEqual(new Date(Date.UTC(2020, 0, 4, 20, 28, 30)));
