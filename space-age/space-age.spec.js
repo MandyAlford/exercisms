@@ -17,7 +17,7 @@ describe('Space Age', () => {
     expect(age('mars', 2129871239)).toEqual(35.88);
   });
 
-  xtest('age on Jupiter', () => {
+  test('age on Jupiter', () => {
     expect(age('jupiter', 901876382)).toEqual(2.41);
   });
 
