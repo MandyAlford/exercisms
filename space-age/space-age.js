@@ -3,16 +3,26 @@
 // convenience to get you started writing code faster.
 // Given an age in seconds, calculate how old someone would be on
 // seonds in year
-// Earth: orbital period 1.0 Earth years, 365.25 Earth days, or 31557600 seconds
+// Earth: orbital period 1.0 Earth years, 365.25 Earth days, or
+// 31557600 seconds = 1 earth years
+//
 
 export const age = (planet, seconds) => {
   if(planet === 'earth') {
     return parseFloat((seconds/31557600).toFixed(2))
   } else {
-      console.log(orbits[planet] * seconds)
+      const earthYrsPerRotation = 1/orbits[planet]
+      const years = seconds * earthYrsPerRotation
+
+      return parseFloat(((seconds/31557600)*earthYrsPerRotation).toFixed(2))
+      console.log(test)
   }
 };
+// mercury seconds - 2134835688
+// mercury years = 4.152018690727338 earth years
+//
 
+// 1 planet year = earth years
 const orbits = {
   'mercury': 0.2408467,
   'venus': 0.61519726,
