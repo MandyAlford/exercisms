@@ -20,9 +20,5 @@ export const isPangram = (sentence) => {
     }
   });
 
-  if (alphabet.length === 0 ){
-    return true
-  } else {
-    return false
-  }
+ return alphabet.length === 0
 };
