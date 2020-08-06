@@ -26,26 +26,23 @@ export class Matrix {
   }
 
   get columns() {
-    let columns = [[],[],[],[]]
+    let columns = [[]]
 
-    let splitData = this.data.split('\n');
+    let rowsData = this.rows
 
-    let newData = splitData.map(element => {
-       return element.split(' ')
-    })
-
-    let rowsData = newData.map(element => {
-      return element.map(string => {
-        return parseInt(string)
-      })
-    })
 // loop over each row array and group all same indexes together in new arrays
     rowsData.forEach(row => {
       for(var i = 0; i < row.length; i++) {
+        if(columns[i]) {
+          columns[i].push(row[i])
+        } else {
+        let array = []
+        columns.push(array)
         columns[i].push(row[i])
+        }
       }
     })
-    console.log(columns)
     return columns
   }
+
 }
