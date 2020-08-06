@@ -10,22 +10,42 @@ export class Matrix {
 
   get rows() {
     let splitData = this.data.split('\n');
-    let parsedData = [];
     // console.log(splitData)
 
-    // numData = array of arrays containing strings
+    // newData = array of arrays containing strings
     let newData = splitData.map(element => {
        return element.split(' ')
     })
-    let numData = newData.map(element => {
+    // rowsData = array of arrays containing integers
+    let rowsData = newData.map(element => {
       return element.map(string => {
         return parseInt(string)
       })
     })
-    return numData
+    return rowsData
   }
 
   get columns() {
-    throw new Error("Remove this statement and implement this function");
+    let columns = [[],[],[],[]]
+
+    let splitData = this.data.split('\n');
+
+    let newData = splitData.map(element => {
+       return element.split(' ')
+    })
+
+    let rowsData = newData.map(element => {
+      return element.map(string => {
+        return parseInt(string)
+      })
+    })
+// loop over each row array and group all same indexes together in new arrays
+    rowsData.forEach(row => {
+      for(var i = 0; i < row.length; i++) {
+        columns[i].push(row[i])
+      }
+    })
+    console.log(columns)
+    return columns
   }
 }
