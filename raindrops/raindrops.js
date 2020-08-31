@@ -11,25 +11,33 @@ export const convert = (num) => {
   let output = ''
   let factors = []
 
-  for(var i = 1; i < num; i++) {
+  for(var i = 1; i <= num; i++) {
     if(num % i == 0){
-      console.log('inside')
       factors.push(i)
     }
   }
 
   factors.forEach((element => {
-    console.log(element)
+    console.log(Object.keys(Keys))
+    if(Object.keys(Keys).includes(element.toString())) {
+      output = output + Keys[element]
+    }
   }))
-  console.log(factors)
-  return num.toString()
+
+  // console.log(output)
+
+  if(output != '') {
+    return output
+  } else {
+    return num.toString()
+  }
   // check the factors for 3, 5, or 7
   // return the corresponding outputs
   // if 3.5.7 do not exist in factors, return num
 };
 
 const Keys = {
-  3: 'Pling',
-  5: 'Plang',
-  7: 'Plong'
+  '3': 'Pling',
+  '5': 'Plang',
+  '7': 'Plong'
 }
