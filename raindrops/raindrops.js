@@ -7,33 +7,21 @@
 // If the number has 7 as a factor, output 'Plong'.
 
 export const convert = (num) => {
-  // determine the factors of number
+
+  let values = [3, 5, 7]
   let output = ''
-  let factors = []
 
-  for(var i = 1; i <= num; i++) {
-    if(num % i == 0){
-      factors.push(i)
+  values.forEach((value) =>{
+    if(num % value == 0){
+      output = output + Keys[value.toString()]
     }
-  }
-
-  factors.forEach((element => {
-    console.log(Object.keys(Keys))
-    if(Object.keys(Keys).includes(element.toString())) {
-      output = output + Keys[element]
-    }
-  }))
-
-  // console.log(output)
+  })
 
   if(output != '') {
     return output
   } else {
     return num.toString()
   }
-  // check the factors for 3, 5, or 7
-  // return the corresponding outputs
-  // if 3.5.7 do not exist in factors, return num
 };
 
 const Keys = {
