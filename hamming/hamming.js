@@ -9,7 +9,11 @@ export const compute = (strand1, strand2) => {
   // console.log('2', strand2)
 
   // compare character by character of both arrays
-if(strand1.length !== strand2.length) {
+  if ((strand1.length !== strand2.length) && (strand1 === '')){
+    throw new Error('left strand must not be empty')
+} else if ((strand1.length !== strand2.length) && (strand2 === '')) {
+  throw new Error('right strand must not be empty')
+} else if(strand1.length !== strand2.length) {
   throw new Error('left and right strands must be of equal length')
 }
 

@@ -27,19 +27,19 @@ describe('Hamming', () => {
     );
   });
 
-  xtest('disallow second strand longer', () => {
+  test('disallow second strand longer', () => {
     expect(() => compute('ATA', 'AGTG')).toThrow(
       new Error('left and right strands must be of equal length'),
     );
   });
 
-  xtest('disallow left empty strand', () => {
+  test('disallow left empty strand', () => {
     expect(() => compute('', 'G')).toThrow(
       new Error('left strand must not be empty'),
     );
   });
 
-  xtest('disallow right empty strand', () => {
+  test('disallow right empty strand', () => {
     expect(() => compute('G', '')).toThrow(
       new Error('right strand must not be empty'),
     );
