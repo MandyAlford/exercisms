@@ -4,10 +4,15 @@
 //
 
 export const compute = (strand1, strand2) => {
+  let differences = 0
   console.log('1', strand1)
   console.log('2', strand2)
 
-  if(strand1 === strand2) {
-    return 0
+  // compare character by character of both arrays
+  for(var i=0; i<= strand1.length; i++) {
+    if(strand1[i] !== strand2[i]){
+      differences += 1
+    }
   }
+  return differences
 };

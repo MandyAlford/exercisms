@@ -9,7 +9,7 @@ describe('Hamming', () => {
     expect(compute('A', 'A')).toEqual(0);
   });
 
-  xtest('single letter different strands', () => {
+  test('single letter different strands', () => {
     expect(compute('G', 'T')).toEqual(1);
   });
 
