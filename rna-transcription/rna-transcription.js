@@ -3,8 +3,15 @@
 // convenience to get you started writing code faster.
 //
 
-export const toRna = (nucleotide) => {
-  return nucleotides[nucleotide]
+export const toRna = (rna) => {
+  let nucleotideArray = rna.split('')
+  let rnaReturn = ''
+
+  nucleotideArray.forEach((nucleotide) => {
+    rnaReturn = rnaReturn + nucleotides[nucleotide]
+  })
+
+  return rnaReturn
 };
 
 const nucleotides = {
