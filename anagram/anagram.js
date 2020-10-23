@@ -9,7 +9,7 @@ export const findAnagrams = (string, choices) => {
 
   for(var i = 0; i < choices.length; i++) {
     // console.log(choices[i].toLowerCase().split('').sort().join(''))
-    if (choices[i].toLowerCase().split('').sort().join('') === sortedString) {
+    if ((choices[i].toLowerCase().split('').sort().join('') === sortedString) && string.toLowerCase() != choices[i].toLowerCase()) {
       placeholder.push(choices[i])
     }
   }

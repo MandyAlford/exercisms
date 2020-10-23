@@ -71,7 +71,7 @@ describe('Anagram', () => {
     expect(findAnagrams('tapper', ['patter'])).toEqual([]);
   });
 
-  xtest('words are not anagrams of themselves (case-insensitive)', () => {
+  test('words are not anagrams of themselves (case-insensitive)', () => {
     expect(findAnagrams('BANANA', ['BANANA', 'Banana', 'banana'])).toEqual([]);
   });
 
