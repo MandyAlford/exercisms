@@ -4,9 +4,13 @@
 //
 
 export const findAnagrams = (string, choices) => {
-  for(var i = 0; i < string.length; i++) {
-    console.log(choice[i])
+  let placeholder = []
+  let sortedString = string.split('').sort().join('')
+
+  for(var i = 0; i < choices.length; i++) {
+    if (choices[i].split('').sort().join('') === sortedString) {
+      placeholder.push(choices[i])
+    }
   }
-  //  if hit a mismatch, end and move to next word
-  // if choice has all letters, return that chioce
+  return placeholder
 }

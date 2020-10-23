@@ -7,18 +7,18 @@ describe('Anagram', () => {
     ).toEqual([]);
   });
 
-  xtest('detects two anagrams', () => {
+  test('detects two anagrams', () => {
     expect(findAnagrams('master', ['stream', 'pigeon', 'maters'])).toEqual([
       'stream',
       'maters'
     ]);
   });
 
-  xtest('does not detect anagram subsets', () => {
+  test('does not detect anagram subsets', () => {
     expect(findAnagrams('good', ['dog', 'goody'])).toEqual([]);
   });
 
-  xtest('detects anagram', () => {
+  test('detects anagram', () => {
     expect(
       findAnagrams('listen', ['enlists', 'google', 'inlets', 'banana'])
     ).toEqual(['inlets']);
