@@ -75,7 +75,7 @@ describe('Anagram', () => {
     expect(findAnagrams('BANANA', ['BANANA', 'Banana', 'banana'])).toEqual([]);
   });
 
-  xtest('words other than themselves can be anagrams', () => {
+  test('words other than themselves can be anagrams', () => {
     expect(findAnagrams('LISTEN', ['Listen', 'Silent', 'LISTEN'])).toEqual([
       'Silent'
     ]);
