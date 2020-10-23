@@ -67,7 +67,7 @@ describe('Anagram', () => {
     expect(findAnagrams('go', ['go Go GO'])).toEqual([]);
   });
 
-  xtest('anagrams must use all letters exactly once', () => {
+  test('anagrams must use all letters exactly once', () => {
     expect(findAnagrams('tapper', ['patter'])).toEqual([]);
   });
 

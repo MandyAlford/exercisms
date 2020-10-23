@@ -5,12 +5,15 @@
 
 export const findAnagrams = (string, choices) => {
   let placeholder = []
-  let sortedString = string.split('').sort().join('').toLowerCase()
+  let sortedString = string.toLowerCase().split('').sort().join('')
 
   for(var i = 0; i < choices.length; i++) {
-    if (choices[i].split('').sort().join('').toLowerCase() === sortedString) {
+    // console.log(choices[i].toLowerCase().split('').sort().join(''))
+    if (choices[i].toLowerCase().split('').sort().join('') === sortedString) {
       placeholder.push(choices[i])
     }
   }
+  // console.log(placeholder)
+  // console.log(sortedString)
   return placeholder
 }
