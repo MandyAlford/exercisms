@@ -18,7 +18,12 @@ export class Squares {
   // }
 
   get sumOfSquares() {
-    throw new Error("Remove this statement and implement this function");
+    let result = []
+    for (var i = 0; i < this.sum; i++) {
+      result.push(this.sum - i)
+    }
+
+    return result.reduce((acc, num) => acc + (num * num), 0)
   }
 
   get squareOfSum() {
@@ -31,8 +36,6 @@ export class Squares {
       return acc + num
     },0)
     return sumOfArray * sumOfArray
-
-    // return result.reduce((a, b) => (a * a) + (b * b), 0)
   }
 
   get difference() {
