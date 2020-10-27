@@ -10,7 +10,7 @@ describe('difference-of-squares', () => {
       expect(squares1.squareOfSum).toBe(1);
     });
 
-    xtest('square of sum 5', () => {
+    test('square of sum 5', () => {
       expect(squares5.squareOfSum).toBe(225);
     });
 
