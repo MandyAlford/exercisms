@@ -14,7 +14,7 @@ export class BankAccount {
   }
 
   close() {
-    throw new Error('Remove this statement and implement this function');
+   this.total = null
   }
 
   deposit(amount) {
@@ -26,7 +26,11 @@ export class BankAccount {
   }
 
   get balance() {
-    return this.total
+    if(this.total === null) {
+      throw new ValueError()
+    } else {
+      return this.total
+    }
   }
 
 }
