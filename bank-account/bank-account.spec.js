@@ -65,7 +65,7 @@ describe('Bank Account', () => {
     }).toThrow(ValueError);
   });
 
-  xtest('close already closed account throws error', () => {
+  test('close already closed account throws error', () => {
     const account = new BankAccount();
     expect(() => {
       account.close();
@@ -80,7 +80,7 @@ describe('Bank Account', () => {
     }).toThrow(ValueError);
   });
 
-  xtest('reopened account does not retain balance', () => {
+  test('reopened account does not retain balance', () => {
     const account = new BankAccount();
     account.open();
     account.deposit(50);

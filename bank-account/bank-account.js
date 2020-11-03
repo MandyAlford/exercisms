@@ -6,15 +6,15 @@
 export class BankAccount {
 
   constructor() {
-    this.total = 0;
+    // this.total = 0;
   }
 
   open() {
-    return 0
+    this.total = 0
   }
 
   close() {
-    if (this.total === null) {
+    if ((this.total === null) || (this.total === undefined)) {
       throw new ValueError()
     } else {
    this.total = null
