@@ -14,7 +14,11 @@ export class BankAccount {
   }
 
   close() {
+    if (this.total === null) {
+      throw new ValueError()
+    } else {
    this.total = null
+    }
   }
 
   deposit(amount) {
