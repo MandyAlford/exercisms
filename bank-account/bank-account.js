@@ -26,7 +26,7 @@ export class BankAccount {
   }
 
   deposit(amount) {
-    if (this.total === null) {
+    if ((this.total === null) || (amount < 0)) {
       throw new ValueError()
     } else {
       this.total += amount
@@ -34,7 +34,7 @@ export class BankAccount {
   }
 
   withdraw(amount) {
-    if( (this.total === null) || (this.total < amount)) {
+    if( (this.total === null) || (this.total < amount) || (amount < 0)) {
       throw new ValueError()
     } else {
     this.total -= amount
