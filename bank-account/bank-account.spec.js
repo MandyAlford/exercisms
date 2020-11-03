@@ -72,7 +72,7 @@ describe('Bank Account', () => {
     }).toThrow(ValueError);
   });
 
-  xtest('open already opened account throws error', () => {
+  test('open already opened account throws error', () => {
     const account = new BankAccount();
     account.open();
     expect(() => {
@@ -89,7 +89,7 @@ describe('Bank Account', () => {
     expect(account.balance).toEqual(0);
   });
 
-  xtest('cannot withdraw more than deposited', () => {
+  test('cannot withdraw more than deposited', () => {
     const account = new BankAccount();
     account.open();
     account.deposit(25);

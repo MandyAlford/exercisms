@@ -10,7 +10,11 @@ export class BankAccount {
   }
 
   open() {
-    this.total = 0
+    if(this.total === 0) {
+      throw new ValueError()      
+    } else {
+      this.total = 0
+    }
   }
 
   close() {
@@ -30,7 +34,7 @@ export class BankAccount {
   }
 
   withdraw(amount) {
-    if (this.total === null) {
+    if( (this.total === null) || (this.total < amount)) {
       throw new ValueError()
     } else {
     this.total -= amount
