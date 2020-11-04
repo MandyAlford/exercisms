@@ -10,8 +10,8 @@ export class Clock {
   }
 
   hourConversion() {
-    while(this.hour >= 12){
-      this.hour = this.hour - 12
+    while(this.hour >= 24){
+      this.hour = this.hour - 24  
     }
     while (this.hour < 0) {
       this.hour = 24 + this.hour
@@ -59,8 +59,8 @@ export class Clock {
   }
 
   equals(instance) {
-    // console.log(this)
-    // console.log(instance)
+    console.log(this.toString())
+    console.log(instance.toString())
     if(this.toString() === instance.toString()) {
       return true
     } else {
