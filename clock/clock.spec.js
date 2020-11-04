@@ -156,7 +156,7 @@ describe('Clock', () => {
       expect(new Clock(15, 37).equals(new Clock(15, 37))).toBe(true);
     });
 
-    xtest('clocks a minute apart', () => {
+    test('clocks a minute apart', () => {
       expect(new Clock(15, 36).equals(new Clock(15, 37))).toBe(false);
     });
 

@@ -63,6 +63,8 @@ export class Clock {
     // console.log(instance)
     if(this.toString() === instance.toString()) {
       return true
+    } else {
+      return false
     }
   }
 }
