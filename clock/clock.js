@@ -49,12 +49,13 @@ export class Clock {
 
   plus(minToAdd) {
    this.min = this.min + minToAdd
-    // console.log(this.min)
     return this
   }
 
-  minus() {
-    throw new Error('Remove this statement and implement this function');
+  minus(minToSubtract) {
+    this.min = this.min - minToSubtract
+    // console.log(this.min)
+    return this
   }
 
   equals() {
