@@ -152,7 +152,7 @@ describe('Clock', () => {
   });
 
   describe('Compare two clocks for equality', () => {
-    xtest('clocks with same time', () => {
+    test('clocks with same time', () => {
       expect(new Clock(15, 37).equals(new Clock(15, 37))).toBe(true);
     });
 
