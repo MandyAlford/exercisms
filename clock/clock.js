@@ -13,6 +13,9 @@ export class Clock {
     while(this.hour >= 12){
       this.hour = this.hour - 12
     }
+    while (this.hour < 0) {
+      this.hour = 24 + this.hour
+    }
     if (this.hour.toString().length === 1) {
       this.hour = '0' + this.hour
     } 
@@ -24,6 +27,11 @@ export class Clock {
       this.min = this.min - 60
       hoursToAdd++
     }
+    while (this.min < 0) {
+      this.min = 60 + this.min
+      hoursToAdd--
+    }
+
     this.hour = this.hour + hoursToAdd
     if (this.min.toString().length === 1) {
       this.min = '0' + this.min
