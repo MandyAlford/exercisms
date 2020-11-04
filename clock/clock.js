@@ -4,12 +4,38 @@
 //.
 
 export class Clock {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
+  constructor(hour, min = 0) {
+   this.hour = hour;
+   this.min = min;
+  }
+
+  hourConversion() {
+    while(this.hour >= 12){
+      this.hour = this.hour - 12
+    }
+    if (this.hour.toString().length === 1) {
+      this.hour = '0' + this.hour
+    } 
+  }
+
+  minConversion() {
+    let hoursToAdd = 0
+    while(this.min > 59) {
+      this.min = this.min - 60
+      hoursToAdd++
+    }
+    this.hour = this.hour + hoursToAdd
+    if (this.min.toString().length === 1) {
+      this.min = '0' + this.min
+    }
   }
 
   toString() {
-    throw new Error('Remove this statement and implement this function');
+
+    this.minConversion()
+    this.hourConversion()
+
+    return `${this.hour}:${this.min}`
   }
 
   plus() {
