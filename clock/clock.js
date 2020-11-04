@@ -16,7 +16,7 @@ export class Clock {
     while (this.hour < 0) {
       this.hour = 24 + this.hour
     }
-    if (this.hour.toString().length === 1) {
+    if ((this.hour < 10) && (this.hour >= 0)) {
       this.hour = '0' + this.hour
     } 
   }
@@ -33,12 +33,13 @@ export class Clock {
     }
 
     this.hour = this.hour + hoursToAdd
-    if (this.min.toString().length === 1) {
+    if ((this.min >= 0) && (this.min < 10)) {
       this.min = '0' + this.min
     }
   }
 
   toString() {
+    // console.log('inside')
 
     this.minConversion()
     this.hourConversion()
@@ -46,8 +47,10 @@ export class Clock {
     return `${this.hour}:${this.min}`
   }
 
-  plus() {
-    throw new Error('Remove this statement and implement this function');
+  plus(minToAdd) {
+   this.min = this.min + minToAdd
+    // console.log(this.min)
+    return this
   }
 
   minus() {
