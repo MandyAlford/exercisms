@@ -39,8 +39,6 @@ export class Clock {
   }
 
   toString() {
-    // console.log('inside')
-
     this.minConversion()
     this.hourConversion()
 
@@ -54,13 +52,10 @@ export class Clock {
 
   minus(minToSubtract) {
     this.min = this.min - minToSubtract
-    // console.log(this.min)
     return this
   }
 
   equals(instance) {
-    // console.log(this.toString())
-    // console.log(instance.toString())
     if(this.toString() === instance.toString()) {
       return true
     } else {
