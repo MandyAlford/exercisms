@@ -1,8 +1,11 @@
-//
-// This is only a SKELETON file for the 'Minesweeper' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
 
 export const annotate = (input) =>  {
-  throw new Error('Remove this statement and implement this function');
+  let result = []
+  // console.log(input.includes('*'))
+  if(input.includes('*')) {
+    // console.log('here')
+    return result
+  } else {
+    return input
+  }
 }
