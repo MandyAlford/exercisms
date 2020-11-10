@@ -13,21 +13,24 @@ export class Allergies {
   }
 
   allergicTo(food) {
-    let keys = Object.values(allergens)
-
-    console.log(this.score % 1)
-    // console.log(allergens[food])
-
     if(this.score === 0){
       return false
-    } else if((food==='eggs') && (this.score % 2 === 0)) {
-      return false
-    } else if((food==='eggs') && (this.score % 2 !== 0)) {
-      return true
     }
-    // else {
-    //   return false
-    // }
+
+
+    let result = []
+    let keys = Object.values(allergens)
+    let tracker = this.score
+
+    for(var i = (keys.length - 1); i >=0; i--) {
+      if(tracker < keys[i]) {
+
+      } else if(tracker >= keys[i]) {
+         tracker = tracker - keys[i]
+         result.push(keys[i])
+       }
+    }
+    return result.includes(allergens[food])
   }
 }
 
