@@ -6,10 +6,15 @@
 export class Allergies {
   constructor(score) {
     this.score = score;
+    this.allergiesList = [];
+    this.result = [];
   }
 
   list() {
-    throw new Error("Remove this statement and implement this function");
+    let x = this.allergicTo('x')
+    return this.result.map(value => {
+      return allergenList[value]
+    })
   }
 
   allergicTo(food) {
@@ -17,8 +22,6 @@ export class Allergies {
       return false
     }
 
-
-    let result = []
     let keys = Object.values(allergens)
     let tracker = this.score
 
@@ -27,10 +30,10 @@ export class Allergies {
 
       } else if(tracker >= keys[i]) {
          tracker = tracker - keys[i]
-         result.push(keys[i])
+         this.result.unshift(keys[i])
        }
     }
-    return result.includes(allergens[food])
+    return this.result.includes(allergens[food])
   }
 }
 
@@ -46,13 +49,13 @@ const allergens = {
   'cats': 128
 }
 
-// const allergens = {
-//   1: 'eggs',
-//   2: 'peanuts',
-//   4: 'shellfish',
-//   8: 'strawberries',
-//   16: 'tomatoes',
-//   32: 'chocolate',
-//   64: 'pollen',
-//   128: 'cats'
-// }
+const allergenList = {
+  1: 'eggs',
+  2: 'peanuts',
+  4: 'shellfish',
+  8: 'strawberries',
+  16: 'tomatoes',
+  32: 'chocolate',
+  64: 'pollen',
+  128: 'cats'
+}
