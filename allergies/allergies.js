@@ -18,7 +18,9 @@ export class Allergies {
     console.log(this.score)
     console.log(allergens[food])
 
-    if(allergens[food] === this.score){
+    if(this.score === 0){
+      return false
+    } else if(allergens[food] === this.score) {
       return true
     } else {
       return false
