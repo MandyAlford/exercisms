@@ -15,16 +15,19 @@ export class Allergies {
   allergicTo(food) {
     let keys = Object.values(allergens)
 
-    console.log(this.score)
-    console.log(allergens[food])
+    console.log(this.score % 1)
+    // console.log(allergens[food])
 
     if(this.score === 0){
       return false
-    } else if(allergens[food] === this.score) {
-      return true
-    } else {
+    } else if((food==='eggs') && (this.score % 2 === 0)) {
       return false
+    } else if((food==='eggs') && (this.score % 2 !== 0)) {
+      return true
     }
+    // else {
+    //   return false
+    // }
   }
 }
 
