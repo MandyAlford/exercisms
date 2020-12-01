@@ -1,6 +1,6 @@
 
 export const score = (word) => {
-  return word.toUpperCase().split('').reduce((acc, letter) => {
+  return [...word.toUpperCase()].reduce((acc, letter) => {
     return acc += key[letter]
   },0)
 };
