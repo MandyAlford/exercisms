@@ -1,10 +1,7 @@
 
 export class NucleotideCounts {
   static parse(nucleotides) {
-    // console.log(nucleotides.split(''))
-
     let counts = nucleotides.split('').reduce((acc, nucleotide) => {
-      // console.log(acc[nucleotide])
       acc[nucleotide]++
       return acc
     }, {
@@ -13,7 +10,10 @@ export class NucleotideCounts {
       'G': 0,
       'T': 0
     })
-    console.log(counts)
-    return `${counts['A']} ${counts['C']} ${counts['G']} ${counts['T']}`
+    if(Object.values(counts).length > 4) {
+      throw new Error('Invalid nucleotide in strand');
+    } else {
+      return `${counts['A']} ${counts['C']} ${counts['G']} ${counts['T']}`
+    }
   }
 }
