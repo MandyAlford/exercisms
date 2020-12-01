@@ -5,11 +5,11 @@ describe('count all nucleotides in a strand', () => {
     expect(NucleotideCounts.parse('')).toEqual('0 0 0 0');
   });
 
-  xtest('can count one nucleotide in single-character input', () => {
+  test('can count one nucleotide in single-character input', () => {
     expect(NucleotideCounts.parse('G')).toEqual('0 0 1 0');
   });
 
-  xtest('strand with repeated nucleotide', () => {
+  test('strand with repeated nucleotide', () => {
     expect(NucleotideCounts.parse('GGGGGGG')).toEqual('0 0 7 0');
   });
 

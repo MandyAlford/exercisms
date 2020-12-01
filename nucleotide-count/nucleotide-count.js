@@ -1,10 +1,19 @@
 
 export class NucleotideCounts {
-  static parse() {
-    throw new Error("Remove this statement and implement this function");
-  }
-}
+  static parse(nucleotides) {
+    // console.log(nucleotides.split(''))
 
-let key = {
-  
+    let counts = nucleotides.split('').reduce((acc, nucleotide) => {
+      // console.log(acc[nucleotide])
+      acc[nucleotide]++
+      return acc
+    }, {
+      'A': 0,
+      'C': 0,
+      'G': 0,
+      'T': 0
+    })
+    console.log(counts)
+    return `${counts['A']} ${counts['C']} ${counts['G']} ${counts['T']}`
+  }
 }
